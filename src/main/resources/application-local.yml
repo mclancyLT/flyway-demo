@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    locations: classpath:db/migrations
+    create-schemas: true
+    schemas: demo
+    clean-disabled: false
+  jpa:
+    generate-ddl: false
+    properties:
+      jakarta:
+        persistence:
+          create-database-schemas: true
+          schema-generation:
+            create-source: metadata
+            scripts:
+              action: create
+              create-target: src/main/resources/schema/create.sql

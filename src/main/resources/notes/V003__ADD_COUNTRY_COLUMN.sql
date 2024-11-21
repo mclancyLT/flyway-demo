@@ -1,0 +1,1 @@
+ALTER TABLE demo.address ADD COLUMN country varchar(20)
